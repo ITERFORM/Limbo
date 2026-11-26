@@ -1,0 +1,85 @@
+{
+  "name": "17_argument_types",
+  "note": "argument values of every JSON type, floats and unicode",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "go"
+      },
+      {
+        "role": "assistant",
+        "content": "",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "arguments": {
+                "query": "ünïcode 日本語 😀",
+                "n": 5,
+                "x": 1.5,
+                "tiny": 1e-07,
+                "big": 1e+22,
+                "whole": 3.0,
+                "neg": -2,
+                "flag": false,
+                "nothing": null,
+                "obj": {
+                  "k": [
+                    1,
+                    2.5,
+                    null,
+                    true
+                  ],
+                  "s": "a\"b\\c\n"
+                },
+                "list": [
+                  "x",
+                  2
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "web_search",
+          "description": "Search the web.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              },
+              "max_results": {
+                "type": "integer",
+                "default": 5
+              },
+              "fresh": {
+                "type": "boolean"
+              },
+              "domains": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ],
+    "add_generation_prompt": false
+  },
+  "error": null
+}

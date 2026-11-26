@@ -1,0 +1,23 @@
+{
+  "name": "20_two_system_messages",
+  "note": "two leading system messages are merged",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "First."
+      },
+      {
+        "role": "system",
+        "content": "Second."
+      },
+      {
+        "role": "user",
+        "content": "Hi"
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

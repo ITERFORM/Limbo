@@ -1,0 +1,20 @@
+{
+  "name": "05_reasoning_content_kept",
+  "note": "reasoning_content after the last user query is kept (no generation prompt)",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Think about 17*3."
+      },
+      {
+        "role": "assistant",
+        "content": "51",
+        "reasoning_content": "  17*3 = 51.\n\n"
+      }
+    ],
+    "add_generation_prompt": false
+  },
+  "error": null
+}

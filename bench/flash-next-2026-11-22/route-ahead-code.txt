@@ -1,0 +1,10 @@
+route-ahead: 110 tokens, stack row 10240, 10 experts per token
+   k      recall@10      positions
+   0          84.7%           5060
+   1          74.4%           4950
+   2          66.3%           4840
+   3          60.3%           4730
+   4          55.5%           4620
+   6          48.7%           4400
+   8          45.8%           4180
+finished

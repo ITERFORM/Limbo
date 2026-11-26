@@ -1,0 +1,20 @@
+{
+ "name": "94_error_unknown_part",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "video",
+      "video_url": {
+       "url": "x"
+      }
+     }
+    ]
+   }
+  ],
+  "add_generation_prompt": true
+ },
+ "error": "Unsupported content part type: video"
+}

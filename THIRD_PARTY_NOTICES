@@ -1,0 +1,35 @@
+# Third-party notices
+
+Limbo is written from scratch (docs/CLEANROOM.md). Two kinds of third-party material appear in this
+repository, both deliberate and both listed here.
+
+## ggml — MIT
+
+`src/ggml_grids.cpp` contains four tables copied verbatim from ggml:
+
+| table | where it came from | why |
+|---|---|---|
+| `kmask_iq2xs[8]` | `ggml/src/ggml-common.h` | the per-lane sign mask shared by IQ2_S and IQ3_S |
+| `iq2s_grid[1024]` | `ggml/src/ggml-common.h` | the IQ2_S codebook |
+| `iq3s_grid[512]` | `ggml/src/ggml-common.h` | the IQ3_S codebook |
+| `kvalues_iq4nl[16]` | `ggml/src/ggml-common.h` | the IQ4_NL/IQ4_XS value table |
+
+A codebook grid is an interoperability fact, not expression: it must match the quantiser's grid bit for
+bit or the weights decode to the wrong numbers. CLEANROOM.md §4 allows exactly this, under the MIT
+notice, and `scripts/gen_ggml_grids.py` regenerates the file from a ggml tree so the provenance is
+reproducible.
+
+The block layouts (field order, sizes) and the bit-level meaning of the i-quant and K-quant formats are
+also ggml's interoperability facts (CLEANROOM.md §3) and are written down exactly in
+`include/limbo/quants.hpp`. The dequantisation code itself is Limbo's.
+
+## Everything else
+
+The four donors named in `docs/donors/` (kindi AGPL-3.0, llama-modchip Apache-2.0, the adaptive KV
+streaming fork MIT, Strata MIT) contribute **ideas and measurements only**, through those specs. No
+donor code is in this repository, and the reader of a donor spec does not open the donor's source
+(CLEANROOM.md §1, §5).
+
+The oracle (`oracle/`, `make oracle`) links the operator's own llama.cpp build as a measuring device.
+It is not part of the engine, nothing from it is linked into `liblimbo.a`, and only its numbers cross
+the line (CLEANROOM.md rule 0).

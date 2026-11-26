@@ -1,0 +1,8 @@
+<|im_start|>user
+padded<|im_end|>
+<|im_start|>assistant
+answer<|im_end|>
+<|im_start|>user
+next<|im_end|>
+<|im_start|>assistant
+<think>

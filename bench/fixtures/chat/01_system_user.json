@@ -1,0 +1,19 @@
+{
+  "name": "01_system_user",
+  "note": "system + user, generation prompt (thinking default)",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are terse."
+      },
+      {
+        "role": "user",
+        "content": "Say hello in five words."
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

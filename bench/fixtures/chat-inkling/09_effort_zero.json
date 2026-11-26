@@ -1,0 +1,13 @@
+{
+ "name": "09_effort_zero",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "Do not think."
+   }
+  ],
+  "reasoning_effort": "none",
+  "add_generation_prompt": true
+ }
+}

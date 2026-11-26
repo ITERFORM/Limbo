@@ -1,0 +1,57 @@
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 262400 positions in 1025 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (436 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 262144, NVIDIA GeForce RTX 4060 Ti, 13.48 GB of VRAM, K/V q4 (auto: a pool of 1025 pages = 262400 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 2055 MiB above the reserve and a 160 MiB slack; f16 needs 5251 MiB), prefill planes 2 chunk 512, no speculation, listening on http://127.0.0.1:8090
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: /v1/chat/completions stream=1 prompt=258813 cached=0 gen=512 finish=length prefill=506.08s (511.41 tok/s) decode=12.30s (41.62 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1013/1025pg shared=0
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.11s (44.82 tok/s) decode=11.84s (43.23 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.11s (45.32 tok/s) decode=11.84s (43.25 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.11s (47.54 tok/s) decode=11.87s (43.13 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.10s (47.70 tok/s) decode=10.97s (46.68 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.10s (50.34 tok/s) decode=10.88s (47.05 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.10s (50.03 tok/s) decode=10.88s (47.07 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0
+limbo_serve_gpu: stopped

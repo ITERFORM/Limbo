@@ -1,0 +1,79 @@
+{
+ "name": "06_tool_call_and_result",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "Weather in Berlin?"
+   },
+   {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "call_1",
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "arguments": {
+        "city": "Berlin",
+        "units": "metric"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "role": "tool",
+    "name": "get_weather",
+    "tool_call_id": "call_1",
+    "content": "{\"temp_c\": 7}"
+   },
+   {
+    "role": "user",
+    "content": "In Fahrenheit?"
+   }
+  ],
+  "tools": [
+   {
+    "type": "function",
+    "function": {
+     "name": "get_weather",
+     "description": "Current weather for a city",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "city": {
+        "type": "string"
+       },
+       "units": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "city"
+      ]
+     }
+    }
+   },
+   {
+    "type": "function",
+    "function": {
+     "name": "add",
+     "description": "Add two integers",
+     "parameters": {
+      "type": "object",
+      "properties": {
+       "a": {
+        "type": "integer"
+       },
+       "b": {
+        "type": "integer"
+       }
+      }
+     }
+    }
+   }
+  ],
+  "add_generation_prompt": true
+ }
+}

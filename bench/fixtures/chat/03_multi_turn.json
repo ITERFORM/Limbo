@@ -1,0 +1,35 @@
+{
+  "name": "03_multi_turn",
+  "note": "three user turns; earlier assistant turns lose their think block",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "Be brief."
+      },
+      {
+        "role": "user",
+        "content": "What is 2+2?"
+      },
+      {
+        "role": "assistant",
+        "content": "4"
+      },
+      {
+        "role": "user",
+        "content": "And 3+3?"
+      },
+      {
+        "role": "assistant",
+        "content": "6"
+      },
+      {
+        "role": "user",
+        "content": "Thanks."
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

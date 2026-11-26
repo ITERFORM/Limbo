@@ -1,0 +1,19 @@
+{
+  "name": "93_error_bad_part",
+  "note": "a content part that is not text/image/video",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "foo": 1
+          }
+        ]
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": "Unexpected item type in content."
+}

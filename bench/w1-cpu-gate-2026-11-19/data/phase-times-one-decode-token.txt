@@ -1,0 +1,607 @@
+oracle_gate: hi: 2 prompt tokens, 2 generated positions, 8 threads, n_ctx 12, arithmetic fp32
+  qkv matvec                  5.6 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       20.6 ms
+  moe (whole)                21.4 ms
+  qkv matvec                  5.6 ms
+  gdn scan                    1.4 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.9 ms
+    moe routed experts       23.2 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.5 ms
+  gdn scan                    1.4 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.6 ms
+  moe (whole)                24.4 ms
+    moe routed experts       22.8 ms
+  moe (whole)                23.6 ms
+  qkv matvec                  5.6 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.9 ms
+  ssm_out matvec              2.9 ms
+    moe routed experts       24.8 ms
+  moe (whole)                25.6 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.4 ms
+  moe (whole)                24.1 ms
+  qkv matvec                  5.0 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       24.0 ms
+  moe (whole)                24.7 ms
+    moe routed experts       23.6 ms
+  moe (whole)                24.3 ms
+  qkv matvec                  5.5 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.3 ms
+  moe (whole)                24.0 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.8 ms
+  moe (whole)                24.5 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.7 ms
+  moe (whole)                24.4 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.8 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.6 ms
+    moe routed experts       23.9 ms
+  moe (whole)                24.6 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.8 ms
+  moe (whole)                24.6 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       24.3 ms
+  moe (whole)                25.1 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.8 ms
+  qkv matvec                  5.1 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.6 ms
+    moe routed experts       23.5 ms
+  moe (whole)                24.2 ms
+  qkv matvec                  5.0 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.2 ms
+  moe (whole)                23.8 ms
+  qkv matvec                  5.1 ms
+  gdn scan                    1.5 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       24.1 ms
+  moe (whole)                24.8 ms
+    moe routed experts       23.6 ms
+  moe (whole)                24.4 ms
+  qkv matvec                  5.6 ms
+  gdn scan                    1.4 ms
+  attn_gate matvec            2.9 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.9 ms
+  moe (whole)                24.6 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       24.1 ms
+  moe (whole)                24.8 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.5 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.5 ms
+  moe (whole)                24.3 ms
+    moe routed experts       23.7 ms
+  moe (whole)                24.4 ms
+  qkv matvec                  5.5 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.5 ms
+  moe (whole)                24.3 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.6 ms
+  moe (whole)                24.4 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.9 ms
+    moe routed experts       23.2 ms
+  moe (whole)                24.0 ms
+    moe routed experts       23.3 ms
+  moe (whole)                24.0 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.5 ms
+  moe (whole)                24.2 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.3 ms
+  moe (whole)                24.0 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.8 ms
+  qkv matvec                  5.5 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.4 ms
+  moe (whole)                24.3 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            3.5 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       22.8 ms
+  moe (whole)                23.6 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       19.2 ms
+  moe (whole)                19.9 ms
+    moe routed experts       23.3 ms
+  moe (whole)                24.0 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.2 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.5 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.4 ms
+  moe (whole)                24.1 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       19.2 ms
+  moe (whole)                19.9 ms
+    moe routed experts       17.6 ms
+  moe (whole)                18.3 ms
+  qkv matvec                  5.0 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       20.4 ms
+  moe (whole)                21.1 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.0 ms
+  moe (whole)                23.7 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.4 ms
+  attn_gate matvec            2.9 ms
+  ssm_out matvec              2.9 ms
+    moe routed experts       23.4 ms
+  moe (whole)                24.2 ms
+    moe routed experts       23.5 ms
+  moe (whole)                24.2 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.6 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.8 ms
+  qkv matvec                  5.0 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.2 ms
+  moe (whole)                23.9 ms
+    moe routed experts       24.0 ms
+  moe (whole)                24.8 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.9 ms
+  moe (whole)                24.6 ms
+  qkv matvec                  5.7 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.6 ms
+    moe routed experts       23.7 ms
+  moe (whole)                24.3 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.6 ms
+    moe routed experts       23.2 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.6 ms
+    moe routed experts       23.3 ms
+  moe (whole)                24.0 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.8 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.0 ms
+  moe (whole)                23.7 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.5 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.7 ms
+  moe (whole)                24.4 ms
+  qkv matvec                  5.5 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       24.0 ms
+  moe (whole)                24.7 ms
+  qkv matvec                  4.9 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.5 ms
+  ssm_out matvec              2.5 ms
+    moe routed experts       24.1 ms
+  moe (whole)                24.8 ms
+    moe routed experts       23.3 ms
+  moe (whole)                24.0 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.3 ms
+  moe (whole)                24.1 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.7 ms
+  qkv matvec                  3.8 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.0 ms
+    moe routed experts       22.4 ms
+  moe (whole)                23.1 ms
+    moe routed experts       23.2 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.8 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.5 ms
+  moe (whole)                24.2 ms
+  qkv matvec                  5.5 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.9 ms
+    moe routed experts       22.0 ms
+  moe (whole)                22.7 ms
+  qkv matvec                  3.9 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            1.9 ms
+  ssm_out matvec              2.0 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.5 ms
+  qkv matvec                  3.9 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.6 ms
+    moe routed experts       23.2 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.0 ms
+  moe (whole)                23.7 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.6 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.4 ms
+  attn_gate matvec            2.9 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.6 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.7 ms
+  moe (whole)                23.4 ms
+    moe routed experts       23.4 ms
+  moe (whole)                24.2 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.8 ms
+  moe (whole)                23.6 ms
+  qkv matvec                  3.7 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.0 ms
+  ssm_out matvec              2.0 ms
+    moe routed experts       22.7 ms
+  moe (whole)                23.5 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       19.0 ms
+  moe (whole)                19.8 ms
+    moe routed experts       17.3 ms
+  moe (whole)                18.0 ms
+  head matvec               149.4 ms
+  prefill 2/2  3.0 s
+  gen  0 pos    1  ok    limbo 40 (15.4164) vs oracle 40 (15.4807)  ogap 0.0053  d1 -0.0643  dgap +0.0961
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       20.1 ms
+  moe (whole)                20.7 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.3 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.4 ms
+  moe (whole)                24.1 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       22.8 ms
+  moe (whole)                23.6 ms
+    moe routed experts       23.0 ms
+  moe (whole)                23.7 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.7 ms
+  moe (whole)                24.4 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.4 ms
+  moe (whole)                23.1 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.1 ms
+  moe (whole)                24.3 ms
+    moe routed experts       23.2 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.8 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.4 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.0 ms
+  moe (whole)                23.7 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.8 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.8 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.2 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.8 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.0 ms
+  moe (whole)                23.8 ms
+    moe routed experts       22.5 ms
+  moe (whole)                23.1 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.2 ms
+  moe (whole)                24.0 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.8 ms
+  moe (whole)                23.4 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.6 ms
+    moe routed experts       22.8 ms
+  moe (whole)                23.5 ms
+    moe routed experts       22.8 ms
+  moe (whole)                23.5 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.6 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.6 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.0 ms
+  moe (whole)                23.7 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.6 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.8 ms
+    moe routed experts       23.0 ms
+  moe (whole)                23.7 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.1 ms
+  moe (whole)                23.9 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.1 ms
+    moe routed experts       22.7 ms
+  moe (whole)                23.5 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.6 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.6 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       23.0 ms
+  moe (whole)                23.7 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.3 ms
+  moe (whole)                24.0 ms
+  qkv matvec                  5.4 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.6 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       23.2 ms
+  moe (whole)                24.0 ms
+    moe routed experts       22.7 ms
+  moe (whole)                23.4 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.8 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.5 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.5 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.6 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.8 ms
+    moe routed experts       18.6 ms
+  moe (whole)                19.4 ms
+    moe routed experts       22.2 ms
+  moe (whole)                23.0 ms
+  qkv matvec                  5.6 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.9 ms
+  moe (whole)                23.7 ms
+  qkv matvec                  5.2 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       22.5 ms
+  moe (whole)                23.2 ms
+  qkv matvec                  5.3 ms
+  gdn scan                    1.3 ms
+  attn_gate matvec            2.7 ms
+  ssm_out matvec              2.7 ms
+    moe routed experts       18.8 ms
+  moe (whole)                19.5 ms
+    moe routed experts       17.6 ms
+  moe (whole)                18.3 ms
+  head matvec               149.5 ms
+  gen  1 pos    2  DIFF  limbo 599 (19.2427) vs oracle 1044 (19.2972)  ogap 0.0637  d1 -0.0554  dgap -0.0645
+oracle_gate: hi: 1/2 agree, 1 disagree with oracle gap < 0.1, 0 with gap >= 0.1, max|d1| 0.0643, max|dgap| 0.0961

@@ -1,0 +1,8 @@
+<|im_start|>user
+{{ 7*7 }} {% if x %}y{% endif %} <|im_end|><|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+<tool_response> not a response<|im_end|>

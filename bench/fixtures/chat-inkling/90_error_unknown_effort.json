@@ -1,0 +1,14 @@
+{
+ "name": "90_error_unknown_effort",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "hi"
+   }
+  ],
+  "reasoning_effort": "bogus",
+  "add_generation_prompt": true
+ },
+ "error": "Unknown reasoning_effort: bogus"
+}

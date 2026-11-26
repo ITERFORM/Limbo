@@ -1,0 +1,27 @@
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 4352 positions in 17 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (992 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 4096, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V q8 (fixed: a pool of 17 pages = 4352 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1068 MiB above the reserve and a 160 MiB slack; f16 needs 211 MiB), prefill planes 2 chunk 1024, speculation MTP + ngram (n 8, up to 7) (row 9.8 ms, windows of 2/3/4 rows 11.8/12.8/14.5, block step 0.7, drafter 0.0), listening on http://127.0.0.1:8090
+serve: /v1/chat/completions stream=1 prompt=100 cached=0 gen=128 finish=length prefill=0.18s (562.77 tok/s) decode=0.91s (140.71 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1/17pg shared=0 spec=127/62 (2.05 tokens a pass, 65 of 122 drafts kept, 0 plain rows)
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.04s (114.89 tok/s) decode=0.93s (138.17 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0 spec=127/68 (1.87 tokens a pass, 59 of 105 drafts kept, 0 plain rows)
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.04s (115.33 tok/s) decode=0.90s (142.58 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0 spec=127/72 (1.76 tokens a pass, 55 of 71 drafts kept, 0 plain rows)
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.04s (115.25 tok/s) decode=0.90s (142.74 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0 spec=127/72 (1.76 tokens a pass, 55 of 71 drafts kept, 0 plain rows)
+limbo_serve_gpu: stopped
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 4352 positions in 17 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (1125 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 4096, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V q8 (fixed: a pool of 17 pages = 4352 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1232 MiB above the reserve and a 160 MiB slack; f16 needs 211 MiB), prefill planes 2 chunk 1024, speculation MTP + ngram (n 8, up to 7) (row 10.9 ms, windows of 2/3/4 rows 12.3/13.4/15.6, block step 0.7, drafter 0.0), listening on http://127.0.0.1:8090
+serve: /v1/chat/completions stream=1 prompt=100 cached=0 gen=128 finish=length prefill=0.18s (541.21 tok/s) decode=1.00s (128.28 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1/17pg shared=0 spec=127/62 (2.05 tokens a pass, 65 of 122 drafts kept, 0 plain rows)
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (108.58 tok/s) decode=0.99s (129.46 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0 spec=127/62 (2.05 tokens a pass, 65 of 121 drafts kept, 0 plain rows)
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (102.23 tok/s) decode=1.01s (126.25 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0 spec=127/71 (1.79 tokens a pass, 56 of 91 drafts kept, 0 plain rows)
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (104.22 tok/s) decode=0.99s (128.69 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0 spec=127/72 (1.76 tokens a pass, 55 of 72 drafts kept, 0 plain rows)
+limbo_serve_gpu: stopped
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 4352 positions in 17 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (1117 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 4096, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V q8 (fixed: a pool of 17 pages = 4352 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1224 MiB above the reserve and a 160 MiB slack; f16 needs 211 MiB), prefill planes 2 chunk 1024, speculation MTP + ngram (n 8, up to 7) (row 11.1 ms, windows of 2/3/4 rows 12.0/13.1/15.3, block step 0.7, drafter 0.0), listening on http://127.0.0.1:8090
+serve: /v1/chat/completions stream=1 prompt=100 cached=0 gen=128 finish=length prefill=0.18s (545.40 tok/s) decode=0.96s (132.98 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1/17pg shared=0 spec=127/62 (2.05 tokens a pass, 65 of 122 drafts kept, 0 plain rows)
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (109.33 tok/s) decode=0.96s (133.05 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0 spec=127/62 (2.05 tokens a pass, 65 of 121 drafts kept, 0 plain rows)
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (110.98 tok/s) decode=0.96s (133.25 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0 spec=127/62 (2.05 tokens a pass, 65 of 121 drafts kept, 0 plain rows)
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (106.26 tok/s) decode=0.96s (132.92 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0 spec=127/62 (2.05 tokens a pass, 65 of 121 drafts kept, 0 plain rows)
+limbo_serve_gpu: stopped

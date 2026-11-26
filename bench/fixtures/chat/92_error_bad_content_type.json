@@ -1,0 +1,15 @@
+{
+  "name": "92_error_bad_content_type",
+  "note": "content of an unexpected type",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": 5
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": "Unexpected content type."
+}

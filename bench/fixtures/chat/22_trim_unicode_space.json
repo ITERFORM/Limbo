@@ -1,0 +1,23 @@
+{
+  "name": "22_trim_unicode_space",
+  "note": "content is trimmed with Python's strip (NBSP, ideographic space, newlines)",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": " 　 padded \n\n"
+      },
+      {
+        "role": "assistant",
+        "content": "\n answer  \n"
+      },
+      {
+        "role": "user",
+        "content": "  next  "
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

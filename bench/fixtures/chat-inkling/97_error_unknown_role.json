@@ -1,0 +1,13 @@
+{
+ "name": "97_error_unknown_role",
+ "context": {
+  "messages": [
+   {
+    "role": "developer",
+    "content": "hi"
+   }
+  ],
+  "add_generation_prompt": true
+ },
+ "error": "Unknown message role: developer"
+}

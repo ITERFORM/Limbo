@@ -1,0 +1,16 @@
+{
+  "name": "08_enable_thinking_false",
+  "note": "enable_thinking false: empty think block in the generation prompt",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hi"
+      }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": false
+  },
+  "error": null
+}

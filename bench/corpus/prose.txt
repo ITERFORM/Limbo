@@ -1,0 +1,6 @@
+The quick brown fox jumps over the lazy dog. It's 2026, and we're still arguing about
+tokenizers. DON'T shout: he'll fix it, they've done it, you'd think so, I'M sure.
+Numbers: 0 1 2 42 1234 3.14159 1,000,000 0x1F 12.5% $19.99 -273.15 1e-9
+Abbreviations, e.g. i.e. etc. Quotes: "double", 'single', `backtick`.
+Trailing spaces follow   
+and a tab	separated	row.

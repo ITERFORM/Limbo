@@ -1,0 +1,24 @@
+{
+ "name": "93_error_image_on_assistant",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "hi"
+   },
+   {
+    "role": "assistant",
+    "content": [
+     {
+      "type": "image",
+      "image_url": {
+       "url": "x"
+      }
+     }
+    ]
+   }
+  ],
+  "add_generation_prompt": true
+ },
+ "error": "Image content is only supported for user and tool messages"
+}

@@ -1,0 +1,42 @@
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 262400 positions in 1025 pages of 256 shared by 1 slot
+serve: checkpoints: 2 of 8 asked, 62.8 MiB each (310 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 262144, NVIDIA GeForce RTX 4060 Ti, 13.48 GB of VRAM, K/V q4 (auto: a pool of 1025 pages = 262400 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 2115 MiB above the reserve and a 160 MiB slack; f16 needs 5251 MiB), prefill planes 2 chunk 512, speculation MTP + ngram (n 8, up to 7) (row 9.8 ms, windows of 2/3/4 rows 11.5/12.9/14.7, block step 0.7, drafter 0.0), listening on http://127.0.0.1:8090
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: /v1/chat/completions stream=1 prompt=258813 cached=0 gen=512 finish=length prefill=500.42s (517.19 tok/s) decode=11.29s (45.37 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1013/1025pg shared=0 spec=511/370 (1.38 tokens a pass, 141 of 198 drafts kept, 295 plain rows) [mtp 46 cycles, ngram 28 cycles 102 of 123 kept, dflash 0 cycles 0 of 0 kept]
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.11s (47.31 tok/s) decode=11.13s (45.98 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0 spec=511/357 (1.43 tokens a pass, 154 of 210 drafts kept, 261 plain rows) [mtp 71 cycles, ngram 24 cycles 105 of 132 kept, dflash 0 cycles 0 of 0 kept]
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.11s (46.42 tok/s) decode=11.15s (45.93 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0 spec=511/355 (1.44 tokens a pass, 156 of 202 drafts kept, 252 plain rows) [mtp 77 cycles, ngram 25 cycles 104 of 125 kept, dflash 0 cycles 0 of 0 kept]
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.11s (47.01 tok/s) decode=11.17s (45.84 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0 spec=511/383 (1.33 tokens a pass, 128 of 166 drafts kept, 316 plain rows) [mtp 41 cycles, ngram 25 cycles 104 of 125 kept, dflash 0 cycles 0 of 0 kept]
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.11s (45.91 tok/s) decode=11.09s (46.15 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0 spec=511/370 (1.38 tokens a pass, 141 of 183 drafts kept, 286 plain rows) [mtp 58 cycles, ngram 25 cycles 103 of 125 kept, dflash 0 cycles 0 of 0 kept]
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.11s (47.18 tok/s) decode=11.14s (45.97 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0 spec=511/375 (1.36 tokens a pass, 136 of 178 drafts kept, 296 plain rows) [mtp 53 cycles, ngram 25 cycles 104 of 125 kept, dflash 0 cycles 0 of 0 kept]
+serve: /v1/chat/completions stream=1 prompt=258813 cached=258808 gen=512 finish=length prefill=0.11s (46.50 tok/s) decode=11.21s (45.69 tok/s) slot=0 via=only ckpts=1 restored_at=258808 pool=1013/1025pg shared=0 spec=511/377 (1.36 tokens a pass, 134 of 180 drafts kept, 297 plain rows) [mtp 53 cycles, ngram 26 cycles 103 of 127 kept, dflash 0 cycles 0 of 0 kept]
+limbo_serve_gpu: stopped

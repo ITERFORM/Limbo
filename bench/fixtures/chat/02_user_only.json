@@ -1,0 +1,15 @@
+{
+  "name": "02_user_only",
+  "note": "no system message",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hi"
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

@@ -1,0 +1,522 @@
+g++ -Iinclude -std=c++20 -O2 -g -Wall -Wextra -Werror tests/chat_test.cpp build-cpugate/liblimbo.a -o build-cpugate/bin/tests/chat_test
+g++ -Iinclude -std=c++20 -O2 -g -Wall -Wextra -Werror tests/gguf_test.cpp build-cpugate/liblimbo.a -o build-cpugate/bin/tests/gguf_test
+g++ -Iinclude -std=c++20 -O2 -g -Wall -Wextra -Werror tests/model_test.cpp build-cpugate/liblimbo.a -o build-cpugate/bin/tests/model_test
+g++ -Iinclude -std=c++20 -O2 -g -Wall -Wextra -Werror tests/quants_test.cpp build-cpugate/liblimbo.a -o build-cpugate/bin/tests/quants_test
+g++ -Iinclude -std=c++20 -O2 -g -Wall -Wextra -Werror tests/serve_test.cpp build-cpugate/liblimbo.a -o build-cpugate/bin/tests/serve_test
+g++ -Iinclude -std=c++20 -O2 -g -Wall -Wextra -Werror tests/tok_test.cpp build-cpugate/liblimbo.a -o build-cpugate/bin/tests/tok_test
+g++ -Iinclude -std=c++20 -O2 -g -Wall -Wextra -Werror tests/types_test.cpp build-cpugate/liblimbo.a -o build-cpugate/bin/tests/types_test
+/opt/cuda/bin/nvcc -std=c++20 -O2 -arch=sm_89 -lineinfo -Xcompiler -Wall,-Wextra,-Werror -Iinclude -c src/cuda/gemv.cu -o build-cpugate/obj/cuda/gemv.o
+/opt/cuda/bin/nvcc -std=c++20 -O2 -arch=sm_89 -lineinfo -Xcompiler -Wall,-Wextra,-Werror -Iinclude -c src/cuda/gpu.cu -o build-cpugate/obj/cuda/gpu.o
+/opt/cuda/bin/nvcc -std=c++20 -O2 -arch=sm_89 -lineinfo -Xcompiler -Wall,-Wextra,-Werror -Iinclude -c src/cuda/ops.cu -o build-cpugate/obj/cuda/ops.o
+ar rcs build-cpugate/liblimbo_cuda.a build-cpugate/obj/cuda/gemv.o build-cpugate/obj/cuda/gpu.o build-cpugate/obj/cuda/ops.o
+/opt/cuda/bin/nvcc -std=c++20 -O2 -arch=sm_89 -lineinfo -Xcompiler -Wall,-Wextra,-Werror -Iinclude tests/cuda_gemv_test.cu build-cpugate/liblimbo_cuda.a build-cpugate/liblimbo.a -o build-cpugate/bin/tests/cuda_gemv_test
+== chat_test
+ok   the model's chat template compiles
+ok   json: a mixed document parses
+ok   json: key order and number types survive a round trip
+ok   json: Python's default separators
+ok   json: 1.0 stays a float
+ok   json: 10 is an int
+ok   json: an exponent makes a float
+ok   json: escapes and surrogate pairs decode
+ok   json: non-ASCII is kept as written
+ok   json: ensure_ascii escapes like Python
+ok   json: trailing data is an error
+ok   json: a missing value is an error
+ok   json: an unterminated array is an error
+ok   json: absurd nesting is refused
+ok   json: an empty array
+ok   json: indent matches Python
+ok   py_float_repr follows Python's repr
+ok   the golden chat fixtures are present (32 cases)
+ok   fixture 01_system_user: 126 bytes identical
+ok   fixture 02_user_only: 60 bytes identical
+ok   fixture 03_multi_turn: 248 bytes identical
+ok   fixture 04_reasoning_content_dropped: 153 bytes identical
+ok   fixture 05_reasoning_content_kept: 109 bytes identical
+ok   fixture 06_inline_think_in_content: 208 bytes identical
+ok   fixture 07_enable_thinking_true: 60 bytes identical
+ok   fixture 08_enable_thinking_false: 71 bytes identical
+ok   fixture 09_no_generation_prompt: 88 bytes identical
+ok   fixture 10_no_generation_prompt_thinking_false: 30 bytes identical
+ok   fixture 11_preserve_thinking: 163 bytes identical
+ok   fixture 12_tools_system_user: 1716 bytes identical
+ok   fixture 13_tools_no_system: 1369 bytes identical
+ok   fixture 14_tool_call_roundtrip: 2381 bytes identical
+ok   fixture 15_tool_call_no_content: 1575 bytes identical
+ok   fixture 16_tool_call_null_content: 1571 bytes identical
+ok   fixture 17_argument_types: 1831 bytes identical
+ok   fixture 18_openai_string_arguments: 1597 bytes identical
+ok   fixture 19_developer_role: 100 bytes identical
+ok   fixture 20_two_system_messages: 104 bytes identical
+ok   fixture 21_content_parts: 108 bytes identical
+ok   fixture 22_trim_unicode_space: 135 bytes identical
+ok   fixture 23_template_syntax_in_content: 153 bytes identical
+ok   fixture 24_tool_results_in_user_turn: 1561 bytes identical
+ok   fixture 25_tool_then_user: 1599 bytes identical
+ok   fixture 26_empty_tools_list: 60 bytes identical
+ok   fixture 27_assistant_last_no_prompt: 92 bytes identical
+ok   fixture 28_tool_content_parts: 1562 bytes identical
+ok   fixture 90_error_no_messages: raises "No messages provided."
+ok   fixture 91_error_system_image: raises "System message cannot contain images."
+ok   fixture 92_error_bad_content_type: raises "Unexpected content type."
+ok   fixture 93_error_bad_part: raises "Unexpected item type in content."
+ok   the interpreter cases are present
+ok   76 of 76 interpreter cases match Python jinja2
+ok   parse: plain content when the prompt closed the think block
+ok   parse: reasoning, then content, both trimmed
+ok   parse: a think block the model opened itself
+ok   parse: no </think> (length cut): all reasoning
+ok   parse: content before a tool call, the call split out
+ok   parse: string parameter
+ok   parse: integer parameter typed by the schema
+ok   parse: parameters keep their order
+ok   parse: a call with no content before it
+ok   parse: a string-typed parameter stays text even when it looks numeric
+ok   parse: number
+ok   parse: boolean from Python's True
+ok   parse: array parameter
+ok   parse: object parameter
+ok   parse: [null, string] types as string
+ok   parse: no schema, valid JSON: parsed
+ok   parse: no schema, not JSON: text
+ok   parse: no schema, true: boolean
+ok   parse: no schema, 007 is not JSON: text
+ok   parse: two calls in a row
+ok   parse: a multi-line value
+ok   parse: tool_choice none leaves the call text in the content
+ok   parse: a call whose </tool_call> never came is still a call
+ok   parse: a call cut off mid-parameter comes back as text
+ok   parse: a malformed block comes back as text
+ok   parse: the JSON tool-call form
+ok   parse: marker look-alikes are plain text
+ok   parse: UTF-8 passes through
+ok   parse: fed in pieces of 1..64 bytes gives the same message as fed whole
+ok   parse: the long text has reasoning, content and two calls
+ok   stream: plain text is released at once
+ok   stream: a possible marker start (and trailing space) is held back
+ok   stream: the call is emitted when it closes
+ok   normalize: a JSON-string arguments becomes an object
+ok   normalize: other call fields survive
+ok   normalize: arguments that are not JSON are left alone
+ok   normalize: the input is not modified
+ok   opens_think: a prompt ending in <think>
+ok   opens_think: a closed block does not
+ok   opens_think: empty
+ok   roundtrip: the generation prompt renders
+ok   roundtrip: the assistant turn renders
+ok   roundtrip: prompt + generated text + <|im_end|> is exactly what the template re-renders for that turn
+ok   utf8: an incomplete trailing sequence is cut off, a complete one kept
+ok   utf8: invalid bytes become U+FFFD
+ok   utf8: valid text is unchanged
+--   LIMBO_TEST_GGUF not set: the GGUF's template is not compared with the fixture copy
+chat: all passed
+== gguf_test
+ok   a well-formed file opens
+ok   version 3
+ok   general.architecture reads back
+ok   general.alignment reads back
+ok   the data section is aligned
+ok   two tensors
+ok   tensor 0 is found by name
+ok   tensor 0 has 8 elements
+ok   tensor 0 is 32 bytes of F32
+ok   tensor 0 shape is 4x2
+ok   tensor 0 points into the mapping
+ok   tensor 0 data is the written pattern
+ok   tensor 1 is found by name
+ok   tensor 1 is 72 bytes of Q4_0
+ok   tensor 1 carries its type id
+ok   tensor 1 sits at its offset
+ok   tensor 1 data matches
+ok   kv lookup finds a key
+ok   get_int on a u32
+ok   a missing key is nullopt
+ok   get_str on a string
+ok   a string array reads back
+ok   string array element 1
+ok   a non-array key yields no array
+ok   v1.gguf        refused: /home/alca/projects/limbo-engine/build-cpugate/tmp/gguf_test/gguf/v1.gguf: unsupported GGUF version 1
+ok   align24.gguf   refused: /home/alca/projects/limbo-engine/build-cpugate/tmp/gguf_test/gguf/align24.gguf: general.alignment is not a power of two
+ok   badtype.gguf   refused: /home/alca/projects/limbo-engine/build-cpugate/tmp/gguf_test/gguf/badtype.gguf: tensor blk.0.attn_q.weight has unknown type id 999
+ok   partial.gguf   refused: /home/alca/projects/limbo-engine/build-cpugate/tmp/gguf_test/gguf/partial.gguf: tensor blk.0.attn_q.weight: row length is not a whole number of blocks
+ok   overlap.gguf   refused: /home/alca/projects/limbo-engine/build-cpugate/tmp/gguf_test/gguf/overlap.gguf: tensor blk.0.attn_q.weight overlaps blk.0.ffn_down_exps.weight (its type's block size does not match the file)
+ok   past.gguf      refused: /home/alca/projects/limbo-engine/build-cpugate/tmp/gguf_test/gguf/past.gguf: tensor blk.0.ffn_down_exps.weight runs past the end of the file
+ok   tiny.gguf      refused: /home/alca/projects/limbo-engine/build-cpugate/tmp/gguf_test/gguf/tiny.gguf: not a GGUF file (too small)
+ok   cut.gguf       refused: /home/alca/projects/limbo-engine/build-cpugate/tmp/gguf_test/gguf/cut.gguf: truncated reading key at byte 81
+ok   magic.gguf     refused: /home/alca/projects/limbo-engine/build-cpugate/tmp/gguf_test/gguf/magic.gguf: bad magic
+--   LIMBO_TEST_GGUF not set: the real ladder files are skipped
+gguf: all passed
+== model_test
+--   LIMBO_TEST_GGUF not set: the model map is skipped
+model: all passed
+== quants_test
+ok   f16 +0
+ok   f16 -0
+ok   f16 1.0
+ok   f16 -2.0
+ok   f16 0.5
+ok   f16 inf
+ok   f16 round trip
+ok   f16 round trip
+ok   f16 round trip
+ok   f16 round trip
+ok   f16 round trip
+ok   f16 round trip
+ok   F32
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   F16
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   BF16
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   Q8_0
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   Q2_K
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   Q3_K
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   Q4_K
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   Q5_K
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   Q6_K
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   IQ2_S
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   IQ3_S
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   IQ4_XS
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   IQ4_NL
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   Q2_0
+ok   the decoder's block size is the table's block size
+ok   the format is implemented
+ok   an unimplemented type is refused rather than decoded
+ok   Q2_0 decodes
+ok   Q2_0 maps code 0,1,2,3 to -1,0,+1,+2 times d
+ok   Q8_0 decodes
+ok   Q8_0 is d times the quants
+ok   IQ4_NL decodes
+ok   IQ4_NL reads its nibbles through the value table
+ok   the IQ4_NL table is the one ggml ships
+quants: all passed
+== serve_test
+ok   serve: the chat template compiles
+ok   serve: the server binds an ephemeral port on 127.0.0.1
+ok   GET /health -> 200 {status: ok}
+ok   GET /health is JSON
+ok   GET /v1/models lists the model
+ok   an unknown path is 404
+ok   GET on the chat endpoint is 405
+ok   POST on /health is 405
+ok   13 of 13 malformed requests get a 400 with an OpenAI-shaped error
+ok   completion: 200 application/json
+ok   completion: object, id and model
+ok   completion: created is an integer
+ok   completion: the scripted text is the message content
+ok   completion: no reasoning_content when the think block was closed by the prompt
+ok   completion: finish_reason stop
+ok   completion: usage counts the prompt and the completion (the end token included)
+ok   completion: the first request caches nothing
+ok   completion: a timings block
+ok   completion: one reset, then prompt + generated tokens forwarded at consecutive positions
+ok   completion: the tape holds the prompt and everything generated but the end token
+ok   thinking: the text before </think> is reasoning_content, after it content
+ok   tool call: finish_reason tool_calls
+ok   tool call: content and reasoning around the call
+ok   tool call: an OpenAI tool_calls entry with id, type and function.name
+ok   tool call: function.arguments is a JSON string of the typed parameters
+ok   tool call: without tools the text is left as content
+ok   tool_choice none: the tool block is not in the prompt
+ok   tool_choice none: the call is not parsed
+ok   stream: 200, text/event-stream, chunked
+ok   stream: well-formed `data:` events and a final [DONE]
+ok   stream: every chunk has the same id and object chat.completion.chunk
+ok   stream: the first chunk carries the role
+ok   stream: reasoning_content and content deltas add up to the message
+ok   stream: the last chunk has finish_reason, usage and timings
+ok   stream: the text arrives in several deltas, not one lump
+ok   stream: finish_reason is null until the last chunk
+ok   stream: include_usage ends with an empty-choices usage chunk
+ok   stream: a tool call delta has index, id and type
+ok   stream: the tool call arrives as one delta with name and arguments
+ok   stream: content before the call, finish_reason tool_calls
+ok   stop: the text ends before the stop sequence
+ok   stop: generation ends at the token that completes the sequence
+ok   stop: the earliest of several sequences wins
+ok   stop: text that only looks like the start of a stop sequence is delivered
+ok   stop: streamed text stops before a completed stop sequence (and holds the partial one back)
+ok   length: max_tokens ends the completion with finish_reason length
+ok   context: generation stops with `length` when the window is full
+ok   context: a prompt that does not fit is a 400
+ok   tape: a new conversation resets and reads the whole prompt
+ok   tape: after the turn it holds prompt + generated tokens
+ok   tape: the follow-up request is answered
+ok   tape: the follow-up reuses every token of the previous turn (cached_tokens == tape size)
+ok   tape: no reset for the follow-up
+ok   tape: only the new prompt tokens and the generated ones went through the backend
+ok   tape: timings split cached and processed prompt tokens
+ok   tape: with preserve_thinking a new user turn still continues from the tape
+ok   tape: a prompt that diverges from the tape resets the backend and re-reads it (and still answers)
+ok   tape: a repeated request re-reads its prompt (nothing is rewound)
+ok   tape: through all of it the backend saw consecutive positions from 0
+ok   hangup: a streaming client receives content
+ok   hangup: the server noticed the client was gone and counted the request as aborted
+ok   hangup: generation stopped early (not all 300 tokens)
+ok   hangup: the server answers the next request
+ok   hangup: a non-streaming client that left is noticed within a few tokens, not after the whole completion
+ok   hangup: the next completion is correct and positions stayed consecutive
+ok   framing: a silent connection is dropped after the read deadline and does not block the next request
+ok   framing: the silent client is told 408
+ok   framing: clients that vanish mid-request do not hurt the server
+ok   framing: garbage is a 400
+ok   framing: a body over the limit is a 413 without reading it
+ok   framing: a POST without a length is a 411
+ok   framing: Expect: 100-continue and a chunked request body
+ok   busy: /health is answered within 300 ms while a completion is running
+ok   busy: ... and well before that completion finishes
+ok   busy: the running completion is not disturbed
+ok   busy: a second completion request waits and is then served
+ok   sampler: greedy takes the argmax, the lowest id on a tie
+ok   sampler: the same seed gives the same draws whatever the fallback seed
+ok   sampler: another seed gives other draws
+ok   sampler: top_k 1 is greedy
+ok   sampler: a tiny top_p keeps only the top token
+ok   sampler: min_p drops tokens far below the best one
+ok   sampler: a plain draw follows the softmax (3:1 -> about 75%)
+ok   sampler: top_k 2 never leaves the two best
+serve: all passed
+== tok_test
+ok   space maps to U+0120
+ok   newline maps to U+010A
+ok   a printable byte maps to itself
+ok   a codepoint outside the alphabet has no byte
+ok   split("") -> []
+ok   split("hello world") -> [hello❙ world]
+ok   split("don't") -> [don❙'t]
+ok   split("DON'T") -> [DON❙'T]
+ok   split("123") -> [1❙2❙3]
+ok   split("a  b") -> [a❙ ❙ b]
+ok   split("x   ") -> [x❙   ]
+ok   split("   x") -> [  ❙ x]
+ok   split("a
+
+b") -> [a❙
+
+❙b]
+ok   split("x!
+") -> [x❙!
+]
+ok   split("  
+  ") -> [  
+❙  ]
+ok   split("it's 12.5% ok") -> [it❙'s❙ ❙1❙2❙.❙5❙%❙ ok]
+ok   split("日本") -> [日本]
+ok   split("é") -> [é]
+ok   split("½") -> [½]
+ok   split("Ⅷ") -> [Ⅷ]
+ok   split("😀") -> [😀]
+ok   split("a b") -> [a❙ b]
+ok   split("<|im_start|>") -> [<|❙im❙_start❙|>]
+ok   a whole piece that is a token is one id
+ok   a merge is applied where its rank is lowest
+ok   a merge stops when no pair has a rank
+ok   the empty text has no tokens
+ok   decode reverses the byte-level alphabet
+--   LIMBO_TEST_GGUF not set: the real vocabulary is skipped
+tok: all passed
+== types_test
+ok   F32
+ok   F32        1 elems /   4 bytes
+ok   F16
+ok   F16        1 elems /   2 bytes
+ok   Q4_0
+ok   Q4_0      32 elems /  18 bytes
+ok   Q4_1
+ok   Q4_1      32 elems /  20 bytes
+ok   Q5_0
+ok   Q5_0      32 elems /  22 bytes
+ok   Q5_1
+ok   Q5_1      32 elems /  24 bytes
+ok   Q8_0
+ok   Q8_0      32 elems /  34 bytes
+ok   Q8_1
+ok   Q8_1      32 elems /  36 bytes
+ok   Q2_K
+ok   Q2_K     256 elems /  84 bytes
+ok   Q3_K
+ok   Q3_K     256 elems / 110 bytes
+ok   Q4_K
+ok   Q4_K     256 elems / 144 bytes
+ok   Q5_K
+ok   Q5_K     256 elems / 176 bytes
+ok   Q6_K
+ok   Q6_K     256 elems / 210 bytes
+ok   Q8_K
+ok   Q8_K     256 elems / 292 bytes
+ok   IQ2_XXS
+ok   IQ2_XXS  256 elems /  66 bytes
+ok   IQ2_XS
+ok   IQ2_XS   256 elems /  74 bytes
+ok   IQ3_XXS
+ok   IQ3_XXS  256 elems /  98 bytes
+ok   IQ1_S
+ok   IQ1_S    256 elems /  50 bytes
+ok   IQ4_NL
+ok   IQ4_NL    32 elems /  18 bytes
+ok   IQ3_S
+ok   IQ3_S    256 elems / 110 bytes
+ok   IQ2_S
+ok   IQ2_S    256 elems /  82 bytes
+ok   IQ4_XS
+ok   IQ4_XS   256 elems / 136 bytes
+ok   I8
+ok   I8         1 elems /   1 bytes
+ok   I16
+ok   I16        1 elems /   2 bytes
+ok   I32
+ok   I32        1 elems /   4 bytes
+ok   I64
+ok   I64        1 elems /   8 bytes
+ok   F64
+ok   F64        1 elems /   8 bytes
+ok   IQ1_M
+ok   IQ1_M    256 elems /  56 bytes
+ok   BF16
+ok   BF16       1 elems /   2 bytes
+ok   TQ1_0
+ok   TQ1_0    256 elems /  54 bytes
+ok   TQ2_0
+ok   TQ2_0    256 elems /  66 bytes
+ok   MXFP4
+ok   MXFP4     32 elems /  17 bytes
+ok   Q1_0
+ok   Q1_0     128 elems /  18 bytes
+ok   Q2_0
+ok   Q2_0      64 elems /  18 bytes
+ok   id with no entry is unknown
+ok   id with no entry is unknown
+ok   id with no entry is unknown
+ok   id with no entry is unknown
+ok   id with no entry is unknown
+ok   id with no entry is unknown
+ok   id with no entry is unknown
+ok   id with no entry is unknown
+ok   id with no entry is unknown
+ok   id with no entry is unknown
+ok   id with no entry is unknown
+ok   id with no entry is unknown
+ok   F32 x8 = 32 bytes
+ok   Q4_0 x32 = one block
+ok   Q4_0 x64 = two blocks
+ok   Q4_0 x31 is not a whole number of blocks
+ok   Q4_K x256 = one block
+ok   Q4_K x384 is not a whole number of blocks
+ok   zero elements is not a span
+ok   an unknown type has no span
+types: all passed
+== cuda_gemv_test
+     NVIDIA GeForce RTX 4060 Ti, sm_89, 16064 MB free of 16806 MB
+ok   codebook tables reach the device
+-- plain GEMV, real rows, GPU vs CPU decode + double dot (bar 1e-5 of sum|w*x|)
+ok   gemv launches
+ok   gemv accumulate launches
+     F32     blk.0.ffn_gate_inp.weight          n_in  2048  rows 256  max rel err 3.163e-08  mean 6.429e-09  accumulate max 3.074e-08
+ok   F32: gemv within 1e-5 of the row's sum|w*x|
+ok   F32: accumulate form within 1e-5
+ok   gemv launches
+ok   gemv accumulate launches
+     BF16    blk.40.ffn_gate_inp.weight         n_in  2048  rows 256  max rel err 2.221e-08  mean 5.758e-09  accumulate max 2.353e-08
+ok   BF16: gemv within 1e-5 of the row's sum|w*x|
+ok   BF16: accumulate form within 1e-5
+ok   gemv launches
+ok   gemv accumulate launches
+     Q8_0    blk.39.attn_k.weight               n_in  2048  rows 512  max rel err 4.372e-08  mean 7.426e-09  accumulate max 4.033e-08
+ok   Q8_0: gemv within 1e-5 of the row's sum|w*x|
+ok   Q8_0: accumulate form within 1e-5
+ok   gemv launches
+ok   gemv accumulate launches
+     Q2_K    blk.40.ffn_gate_exps.weight        n_in  2048  rows 512  max rel err 2.578e-08  mean 5.160e-09  accumulate max 2.508e-08
+ok   Q2_K: gemv within 1e-5 of the row's sum|w*x|
+ok   Q2_K: accumulate form within 1e-5
+ok   gemv launches
+ok   gemv accumulate launches
+     Q3_K    blk.40.ffn_down_exps.weight        n_in   512  rows 512  max rel err 2.606e-08  mean 5.820e-09  accumulate max 3.376e-08
+ok   Q3_K: gemv within 1e-5 of the row's sum|w*x|
+ok   Q3_K: accumulate form within 1e-5
+ok   gemv launches
+ok   gemv accumulate launches
+     Q6_K    output.weight                      n_in  2048  rows 512  max rel err 1.989e-08  mean 5.069e-09  accumulate max 1.938e-08
+ok   Q6_K: gemv within 1e-5 of the row's sum|w*x|
+ok   Q6_K: accumulate form within 1e-5
+ok   gemv launches
+ok   gemv accumulate launches
+     IQ2_S   blk.0.ffn_gate_exps.weight         n_in  2048  rows 512  max rel err 1.961e-08  mean 2.996e-09  accumulate max 1.961e-08
+ok   IQ2_S: gemv within 1e-5 of the row's sum|w*x|
+ok   IQ2_S: accumulate form within 1e-5
+ok   gemv launches
+ok   gemv accumulate launches
+     IQ3_S   blk.0.ffn_down_exps.weight         n_in   512  rows 512  max rel err 4.038e-08  mean 7.669e-09  accumulate max 4.697e-08
+ok   IQ3_S: gemv within 1e-5 of the row's sum|w*x|
+ok   IQ3_S: accumulate form within 1e-5
+ok   gemv launches
+ok   gemv accumulate launches
+     IQ4_XS  blk.34.ffn_down_exps.weight        n_in   512  rows 512  max rel err 4.969e-08  mean 6.423e-09  accumulate max 4.365e-08
+ok   IQ4_XS: gemv within 1e-5 of the row's sum|w*x|
+ok   IQ4_XS: accumulate form within 1e-5
+-- MoE form, 8 experts chosen by device-side ids
+--   F32     no expert stack of this type in the model: MoE form not tested
+--   BF16    no expert stack of this type in the model: MoE form not tested
+--   Q8_0    no expert stack of this type in the model: MoE form not tested
+ok   gemv_experts launches
+ok   gemv_experts launches
+     Q2_K    blk.40.ffn_gate_exps.weight        [2048,512,256]  8 experts  shared-x max 1.792e-08 (416 rows)  per-expert-x max 2.965e-08 (416 rows)
+ok   Q2_K: MoE form, shared input, within 1e-5
+ok   Q2_K: MoE form, per-expert input, within 1e-5
+ok   gemv_experts launches
+ok   gemv_experts launches
+     Q3_K    blk.40.ffn_down_exps.weight        [512,2048,256]  8 experts  shared-x max 3.095e-08 (392 rows)  per-expert-x max 2.772e-08 (392 rows)
+ok   Q3_K: MoE form, shared input, within 1e-5
+ok   Q3_K: MoE form, per-expert input, within 1e-5
+--   Q6_K    no expert stack of this type in the model: MoE form not tested
+ok   gemv_experts launches
+ok   gemv_experts launches
+     IQ2_S   blk.0.ffn_gate_exps.weight         [2048,512,256]  8 experts  shared-x max 1.955e-08 (416 rows)  per-expert-x max 1.698e-08 (416 rows)
+ok   IQ2_S: MoE form, shared input, within 1e-5
+ok   IQ2_S: MoE form, per-expert input, within 1e-5
+ok   gemv_experts launches
+ok   gemv_experts launches
+     IQ3_S   blk.0.ffn_down_exps.weight         [512,2048,256]  8 experts  shared-x max 2.154e-08 (392 rows)  per-expert-x max 2.321e-08 (392 rows)
+ok   IQ3_S: MoE form, shared input, within 1e-5
+ok   IQ3_S: MoE form, per-expert input, within 1e-5
+ok   gemv_experts launches
+ok   gemv_experts launches
+     IQ4_XS  blk.34.ffn_down_exps.weight        [512,2048,256]  8 experts  shared-x max 4.704e-08 (392 rows)  per-expert-x max 3.616e-08 (392 rows)
+ok   IQ4_XS: MoE form, shared input, within 1e-5
+ok   IQ4_XS: MoE form, per-expert input, within 1e-5
+-- embedding row
+ok   embed_row launches
+ok   embed_row launches
+ok   embed_row launches
+     token_embd row decode (3 rows): max |gpu - cpu| / max|w| = 0.000e+00
+ok   embedding row decode matches the CPU decoder
+cuda_gemv_test: all passed
+LIMBO: all suites passed
+
+real	0m12,129s
+user	0m26,765s
+sys	0m3,326s

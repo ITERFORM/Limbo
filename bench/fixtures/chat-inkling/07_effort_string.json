@@ -1,0 +1,13 @@
+{
+ "name": "07_effort_string",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "Think hard."
+   }
+  ],
+  "reasoning_effort": "high",
+  "add_generation_prompt": true
+ }
+}

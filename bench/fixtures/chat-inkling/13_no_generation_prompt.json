@@ -1,0 +1,12 @@
+{
+ "name": "13_no_generation_prompt",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "Scored turn."
+   }
+  ],
+  "add_generation_prompt": false
+ }
+}

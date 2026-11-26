@@ -1,0 +1,1 @@
+limbo_serve_gpu: the GPU engine refused to load: gpu: geometry outside what the kernels are written for (hd 256, gdn 128, conv 4, at most 12 query heads per KV head, n_embd, n_ff and the delta-net width multiples of 256 or a whole number of blocks, n_ctx <= 262144)

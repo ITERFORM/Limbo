@@ -1,0 +1,14 @@
+{
+ "name": "91_error_effort_range",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "hi"
+   }
+  ],
+  "reasoning_effort": 1.5,
+  "add_generation_prompt": true
+ },
+ "error": "reasoning_effort must be in [0.0, 0.99]"
+}

@@ -1,0 +1,74 @@
+{
+  "name": "25_tool_then_user",
+  "note": "tool results followed by a new user query",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "q"
+      },
+      {
+        "role": "assistant",
+        "content": "c",
+        "reasoning_content": "r",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "get_weather",
+              "arguments": {
+                "city": "B"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_1",
+        "content": "t"
+      },
+      {
+        "role": "assistant",
+        "content": "done",
+        "reasoning_content": "r2"
+      },
+      {
+        "role": "user",
+        "content": "next"
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_weather",
+          "description": "Get the current weather for a city. Returns <b>JSON</b> & uses 'quotes'.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "City name, e.g. München or 東京"
+              },
+              "unit": {
+                "type": "string",
+                "enum": [
+                  "celsius",
+                  "fahrenheit"
+                ]
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        }
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

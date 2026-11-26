@@ -1,0 +1,19 @@
+layer-gate: 4974 tokens, n_embd 2048
+layer kind part   mean rel_out  max rel_out mean rel_upd  max rel_upd worst row  flips
+  layer 2 row 2054 rel_out 0.018944 rel_upd 0.050794  ROUTING DIFFERS (limbo's 8th and 9th router probabilities 0.01062 0.01062, gap 0.01%)
+  layer 2 row 4116 rel_out 0.017881 rel_upd 0.052121  ROUTING DIFFERS (limbo's 8th and 9th router probabilities 0.01057 0.01057, gap 0.00%)
+2     GDN  layer      0.000134     0.018944     0.000357     0.052121     4116      2
+                    mean rel_upd by position:  [0,128) 0.00048  [128,512) 0.00038  [512,2048) 0.00031  [2048,..) 0.00038
+  layer 3 row 2045 rel_out 0.023267 rel_upd 0.074714  ROUTING DIFFERS (limbo's 8th and 9th router probabilities 0.01046 0.01046, gap 0.02%)
+  layer 3 row 2176 rel_out 0.026298 rel_upd 0.074849  ROUTING DIFFERS (limbo's 8th and 9th router probabilities 0.01012 0.01012, gap 0.01%)
+  layer 3 row 2920 rel_out 0.031752 rel_upd 0.093604  ROUTING DIFFERS (limbo's 8th and 9th router probabilities 0.00873 0.00873, gap 0.00%)
+  layer 3 row 4022 rel_out 0.024406 rel_upd 0.072987  ROUTING DIFFERS (limbo's 8th and 9th router probabilities 0.01111 0.01110, gap 0.07%)
+  layer 3 row 4256 rel_out 0.025052 rel_upd 0.067320  ROUTING DIFFERS (limbo's 8th and 9th router probabilities 0.00893 0.00893, gap 0.01%)
+  layer 3 row 4443 rel_out 0.024844 rel_upd 0.064942  ROUTING DIFFERS (limbo's 8th and 9th router probabilities 0.00865 0.00865, gap 0.00%)
+  layer 3 row 4696 rel_out 0.028843 rel_upd 0.088425  ROUTING DIFFERS (limbo's 8th and 9th router probabilities 0.00844 0.00843, gap 0.02%)
+3     ATT  layer      0.001172     0.031752     0.003350     0.093604     2920      7
+                    mean rel_upd by position:  [0,128) 0.00448  [128,512) 0.00343  [512,2048) 0.00303  [2048,..) 0.00346
+39    ATT  layer      0.001815     0.001815     0.002200     0.002200     4973      0
+                    mean rel_upd by position:  [2048,..) 0.00220
+head (output norm + LM head on the oracle's last hidden state): max|dlogit| 0.00002, rel L2 0.000001, argmax limbo 248046 oracle 248046
+routing: 9949 (layer,row) pairs, 9 with a different expert set (0.09%); mean rel_upd 0.00179 over the 9940 rows where the set agrees, 0.07108 over the 9 where it differs

@@ -1,0 +1,25 @@
+{
+  "name": "11_preserve_thinking",
+  "note": "preserve_thinking keeps the think block of earlier turns",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "q1"
+      },
+      {
+        "role": "assistant",
+        "content": "answer one",
+        "reasoning_content": "thought one"
+      },
+      {
+        "role": "user",
+        "content": "q2"
+      }
+    ],
+    "add_generation_prompt": true,
+    "preserve_thinking": true
+  },
+  "error": null
+}

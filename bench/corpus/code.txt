@@ -1,0 +1,9 @@
+#include <cstdint>
+namespace limbo::tok {
+struct Vocab { std::vector<std::string_view> tokens; };
+int f(int x) { return x * 2 + 1; }  // 2 + 1 = 3
+def g(n):
+    return [i ** 2 for i in range(n) if i % 2 == 0]
+let re = /^[a-z0-9_-]+$/gi;
+SELECT id, name FROM users WHERE age >= 18 AND name LIKE 'A%';
+git commit -m "fix: don't drop the tail"

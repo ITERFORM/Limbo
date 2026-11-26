@@ -1,0 +1,9 @@
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 4352 positions in 17 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (1629 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 4096, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V f16 (auto: a pool of 17 pages = 4352 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1336 MiB above the reserve and a 160 MiB slack; f16 needs 211 MiB), prefill planes 2 chunk 1024, no speculation, listening on http://127.0.0.1:8090
+serve: /v1/chat/completions stream=1 prompt=107 cached=0 gen=128 finish=length prefill=0.18s (582.80 tok/s) decode=1.26s (101.34 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.04s (115.83 tok/s) decode=1.29s (99.39 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.05s (108.31 tok/s) decode=1.32s (97.31 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.05s (110.69 tok/s) decode=1.31s (97.54 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+limbo_serve_gpu: stopped

@@ -1,0 +1,12 @@
+@@ code
+You are Ariadne, a coding agent on the operator's desktop. Be precise and brief. Use tools when they are cheaper than guessing.
+
+Review this function and say what it does wrong:
+
+```cpp
+int parse_len(const char* s) {
+    int n = 0;
+    while (*s) { n = n * 10 + (*s - '0'); ++s; }
+    return n;
+}
+```

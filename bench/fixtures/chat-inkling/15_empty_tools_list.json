@@ -1,0 +1,13 @@
+{
+ "name": "15_empty_tools_list",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "No tools today."
+   }
+  ],
+  "tools": [],
+  "add_generation_prompt": true
+ }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "21_content_parts",
+  "note": "content as a list of text parts",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "system",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sys part."
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hello "
+          },
+          {
+            "type": "text",
+            "text": "world"
+          }
+        ]
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

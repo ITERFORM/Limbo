@@ -1,0 +1,26 @@
+{
+  "name": "91_error_system_image",
+  "note": "system content with an image",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "system",
+        "content": [
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "x"
+            }
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "Hi"
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": "System message cannot contain images."
+}

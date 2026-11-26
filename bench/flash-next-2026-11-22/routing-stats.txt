@@ -1,0 +1,76 @@
+model: 48 layers, 256 experts, 10 used, expert pool 23.42 GiB (1.952 MiB per expert on average)
+  layers without a row per token are dropped (47 of 48 kept)
+  sequence build/tmp/fn/gate/route-long.bin: 3110 tokens, 1461700 lookups
+  sequence build/tmp/fn/gate/route-code.bin: 110 tokens, 51700 lookups
+  sequence build/tmp/fn/gate/route-prose.bin: 70 tokens, 32900 lookups
+  sequence build/tmp/fn/gate/hi18_llast.bin: 17 tokens, 7990 lookups
+
+concentration on build/tmp/fn/gate/route-long.bin: share of a layer's lookups taken by its m most-used experts (mean over layers; min..max)
+  top   8 of 256:  28.7 %  (14.0..48.7)
+  top  16 of 256:  44.4 %  (23.2..68.3)
+  top  32 of 256:  62.9 %  (36.6..83.6)
+  top  64 of 256:  80.1 %  (55.2..93.7)
+  top 128 of 256:  94.0 %  (79.6..99.1)
+
+static profile: hit rate of the N pairs ranked on the training sequence; (self) = ranked on the test sequence itself
+   slots      GiB  route-long.bin  route-code.bin  route-prose.bi  hi18_llast.bin
+    1000     1.90   52.2% ( 52.2%)   19.8% ( 45.6%)    5.9% ( 46.7%)    2.1% ( 81.2%)
+    2000     3.78   70.5% ( 70.5%)   30.4% ( 64.3%)   11.2% ( 66.6%)    9.3% ( 98.3%)
+    3000     5.66   80.4% ( 80.4%)   39.2% ( 76.6%)   18.7% ( 80.2%)   18.2% (100.0%)
+    3608     6.80   84.6% ( 84.6%)   43.9% ( 82.2%)   23.5% ( 86.1%)   23.5% (100.0%)
+    4500     8.48   89.3% ( 89.3%)   50.5% ( 88.5%)   31.1% ( 92.6%)   31.5% (100.0%)
+    6000    11.31   94.5% ( 94.5%)   60.9% ( 95.6%)   44.6% ( 98.8%)   44.2% (100.0%)
+    7500    14.15   97.5% ( 97.5%)   70.9% ( 99.1%)   59.2% (100.0%)   58.8% (100.0%)
+    9000    17.00   99.2% ( 99.2%)   80.9% (100.0%)   73.3% (100.0%)   73.0% (100.0%)
+   10500    19.86   99.9% ( 99.9%)   90.9% (100.0%)   87.4% (100.0%)   89.5% (100.0%)
+   12288    22.78  100.0% (100.0%)  100.0% (100.0%)  100.0% (100.0%)  100.0% (100.0%)
+
+per-layer LRU by stack distance (c experts in every layer; slots = c x 47); hit rate per sequence
+     c    slots      GiB  route-lo  route-co  route-pr  hi18_lla
+     8      376     0.71    12.4%    13.3%    11.9%    14.5%
+    16      752     1.42    44.1%    46.6%    42.3%    56.5%
+    24     1128     2.14    56.4%    57.9%    51.0%    65.0%
+    32     1504     2.85    63.5%    64.2%    57.0%    69.2%
+    48     2256     4.27    73.2%    72.0%    63.7%    72.9%
+    64     3008     5.70    79.9%    76.5%    68.8%    73.3%
+    96     4512     8.54    88.9%    80.6%    75.5%    73.3%
+   128     6016    11.39    93.9%    82.7%    79.4%    73.3%
+   192     9024    17.09    98.2%    84.5%    80.5%    73.3%
+   256    12032    22.78    99.2%    84.6%    80.5%    73.3%
+
+reuse distance in tokens (share of re-uses within d tokens of the previous use of the same expert), per sequence
+     d  route-lo  route-co  route-pr  hi18_lla
+     1    38.2%    47.4%    46.7%    66.9%
+     2    50.1%    60.3%    56.8%    79.1%
+     4    60.4%    71.6%    67.9%    88.0%
+     8    70.6%    81.5%    78.6%    96.1%
+    16    80.4%    90.7%    87.6%   100.0%
+    32    88.6%    94.3%    97.4%   100.0%
+    64    93.9%    97.8%   100.0%   100.0%
+   128    97.0%   100.0%   100.0%   100.0%
+   512    99.5%   100.0%   100.0%   100.0%
+
+distinct experts per layer touched by a window of W consecutive tokens (mean over layers and windows)
+  route-long.bin                W=1   10.0  W=2   16.2  W=3   21.2  W=4   25.6  W=6   33.3  W=8   40.0  W=16  60.1
+  route-code.bin                W=1   10.0  W=2   15.9  W=3   20.9  W=4   25.2  W=6   32.6  W=8   39.8  W=16  59.7
+  route-prose.bin               W=1   10.0  W=2   16.0  W=3   21.4  W=4   26.0  W=6   34.6  W=8   43.5  W=16  66.4
+  hi18_llast.bin                W=1   10.0  W=2   14.9  W=3   18.8  W=4   22.2  W=6   28.0  W=8   32.7  W=16  44.9
+
+adaptive caches on route-long.bin (cold start, so the first tokens fill them: hit rate over all tokens | over the second half)
+policy                        slots      GiB hit all | 2nd half   MiB/token in
+global LRU                     3608     6.83     85.2% |  84.6%          134.8
+decayed LFU, gamma 0.990       3608     6.83     86.6% |  85.5%           43.1
+decayed LFU, gamma 0.998       3608     6.83     85.1% |  84.1%           12.6
+global LRU                     4800     9.09     91.1% |  90.7%           81.0
+decayed LFU, gamma 0.990       4800     9.09     92.0% |  91.1%           43.1
+decayed LFU, gamma 0.998       4800     9.09     91.0% |  90.1%           13.4
+global LRU                     6000    11.36     94.6% |  94.4%           48.9
+decayed LFU, gamma 0.990       6000    11.36     95.3% |  94.7%           36.9
+decayed LFU, gamma 0.998       6000    11.36     94.7% |  94.1%           13.1
+global LRU                     9000    17.04     98.5% |  98.8%           13.4
+decayed LFU, gamma 0.990       9000    17.04     98.8% |  98.9%           10.5
+decayed LFU, gamma 0.998       9000    17.04     98.9% |  99.0%            8.5
+global LRU                    12288    23.27     99.2% |  99.9%            7.1
+decayed LFU, gamma 0.990      12288    23.27     99.5% |  99.9%            4.5
+decayed LFU, gamma 0.998      12288    23.27     99.5% |  99.9%            4.5
+(slots x average expert size: 3608 = 6.83 GiB, 6000 = 11.36 GiB, 9000 = 17.04 GiB, 12288 = 22.78 GiB; 4800 = 9.1 GiB)

@@ -1,0 +1,13 @@
+{
+ "name": "08_effort_float",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "Think a little."
+   }
+  ],
+  "reasoning_effort": 0.2,
+  "add_generation_prompt": true
+ }
+}

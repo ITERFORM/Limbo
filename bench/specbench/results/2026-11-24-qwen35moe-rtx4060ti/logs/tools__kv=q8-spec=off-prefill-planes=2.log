@@ -1,0 +1,27 @@
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 4352 positions in 17 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (1594 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 4096, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V q8 (fixed: a pool of 17 pages = 4352 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1261 MiB above the reserve and a 160 MiB slack; f16 needs 211 MiB), prefill planes 2 chunk 1024, no speculation, listening on http://127.0.0.1:8090
+serve: /v1/chat/completions stream=1 prompt=100 cached=0 gen=128 finish=length prefill=0.19s (527.13 tok/s) decode=1.40s (91.50 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (101.78 tok/s) decode=1.40s (91.59 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (104.05 tok/s) decode=1.38s (92.93 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.04s (112.86 tok/s) decode=1.28s (99.94 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0
+limbo_serve_gpu: stopped
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 4352 positions in 17 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (1573 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 4096, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V q8 (fixed: a pool of 17 pages = 4352 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1240 MiB above the reserve and a 160 MiB slack; f16 needs 211 MiB), prefill planes 2 chunk 1024, no speculation, listening on http://127.0.0.1:8090
+serve: /v1/chat/completions stream=1 prompt=100 cached=0 gen=128 finish=length prefill=0.19s (535.09 tok/s) decode=1.40s (91.13 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (103.36 tok/s) decode=1.39s (91.89 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (105.89 tok/s) decode=1.40s (91.72 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (103.14 tok/s) decode=1.41s (90.78 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0
+limbo_serve_gpu: stopped
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 4352 positions in 17 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (1557 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 4096, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V q8 (fixed: a pool of 17 pages = 4352 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1224 MiB above the reserve and a 160 MiB slack; f16 needs 211 MiB), prefill planes 2 chunk 1024, no speculation, listening on http://127.0.0.1:8090
+serve: /v1/chat/completions stream=1 prompt=100 cached=0 gen=128 finish=length prefill=0.18s (548.63 tok/s) decode=1.36s (94.22 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (107.87 tok/s) decode=1.35s (94.52 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (110.78 tok/s) decode=1.35s (94.66 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=100 cached=95 gen=128 finish=length prefill=0.05s (106.01 tok/s) decode=1.35s (94.69 tok/s) slot=0 via=only ckpts=1 restored_at=95 pool=1/17pg shared=0
+limbo_serve_gpu: stopped

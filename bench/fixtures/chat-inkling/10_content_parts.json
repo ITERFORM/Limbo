@@ -1,0 +1,21 @@
+{
+ "name": "10_content_parts",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": [
+     {
+      "type": "text",
+      "text": "Two parts: "
+     },
+     {
+      "type": "input_text",
+      "text": "second."
+     }
+    ]
+   }
+  ],
+  "add_generation_prompt": true
+ }
+}

@@ -1,0 +1,27 @@
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 4352 positions in 17 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (1467 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 4096, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V f16 (fixed: a pool of 17 pages = 4352 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1174 MiB above the reserve and a 160 MiB slack; f16 needs 211 MiB), prefill planes 2 chunk 1024, no speculation, listening on http://127.0.0.1:8090
+serve: /v1/chat/completions stream=1 prompt=107 cached=0 gen=128 finish=length prefill=0.20s (547.52 tok/s) decode=1.40s (91.60 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.05s (104.88 tok/s) decode=1.39s (91.81 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.05s (103.89 tok/s) decode=1.39s (91.81 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.05s (103.72 tok/s) decode=1.40s (91.54 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+limbo_serve_gpu: stopped
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 4352 positions in 17 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (1525 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 4096, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V f16 (fixed: a pool of 17 pages = 4352 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1232 MiB above the reserve and a 160 MiB slack; f16 needs 211 MiB), prefill planes 2 chunk 1024, no speculation, listening on http://127.0.0.1:8090
+serve: /v1/chat/completions stream=1 prompt=107 cached=0 gen=128 finish=length prefill=0.20s (540.20 tok/s) decode=1.39s (91.86 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.05s (105.14 tok/s) decode=1.40s (91.28 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.05s (104.97 tok/s) decode=1.39s (91.84 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.05s (104.85 tok/s) decode=1.39s (91.99 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+limbo_serve_gpu: stopped
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 4352 positions in 17 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (1609 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 4096, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V f16 (fixed: a pool of 17 pages = 4352 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1316 MiB above the reserve and a 160 MiB slack; f16 needs 211 MiB), prefill planes 2 chunk 1024, no speculation, listening on http://127.0.0.1:8090
+serve: /v1/chat/completions stream=1 prompt=107 cached=0 gen=128 finish=length prefill=0.18s (581.01 tok/s) decode=1.27s (101.06 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.04s (115.81 tok/s) decode=1.26s (101.45 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.04s (115.88 tok/s) decode=1.27s (101.17 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+serve: /v1/chat/completions stream=1 prompt=107 cached=102 gen=128 finish=length prefill=0.04s (115.78 tok/s) decode=1.26s (101.45 tok/s) slot=0 via=only ckpts=1 restored_at=102 pool=1/17pg shared=0
+limbo_serve_gpu: stopped

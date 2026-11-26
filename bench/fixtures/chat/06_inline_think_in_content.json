@@ -1,0 +1,27 @@
+{
+  "name": "06_inline_think_in_content",
+  "note": "the template splits <think>..</think> out of assistant content",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "q1"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>\nsome thoughts\n</think>\n\nanswer one"
+      },
+      {
+        "role": "user",
+        "content": "q2"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>\nmore thoughts\n</think>\n\nanswer two"
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

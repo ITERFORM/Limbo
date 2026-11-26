@@ -1,0 +1,16 @@
+{
+  "name": "26_empty_tools_list",
+  "note": "an empty tools list renders no tool block",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hi"
+      }
+    ],
+    "tools": [],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

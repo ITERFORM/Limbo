@@ -1,0 +1,21 @@
+{
+ "name": "04_reasoning_content",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "Why is the sky blue?"
+   },
+   {
+    "role": "assistant",
+    "reasoning_content": "Rayleigh scattering.",
+    "content": "Short wavelengths scatter more."
+   },
+   {
+    "role": "user",
+    "content": "And at sunset?"
+   }
+  ],
+  "add_generation_prompt": true
+ }
+}

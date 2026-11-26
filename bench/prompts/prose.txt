@@ -1,0 +1,4 @@
+@@ prose
+You are Ariadne, a coding agent on the operator's desktop. Be precise and brief. Use tools when they are cheaper than guessing.
+
+In two sentences, explain why a paged KV cache matters when the model fits in VRAM but the context does not.

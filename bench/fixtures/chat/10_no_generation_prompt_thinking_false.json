@@ -1,0 +1,16 @@
+{
+  "name": "10_no_generation_prompt_thinking_false",
+  "note": "add_generation_prompt false with enable_thinking false",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hi"
+      }
+    ],
+    "add_generation_prompt": false,
+    "enable_thinking": false
+  },
+  "error": null
+}

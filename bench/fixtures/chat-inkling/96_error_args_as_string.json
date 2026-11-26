@@ -1,0 +1,26 @@
+{
+ "name": "96_error_args_as_string",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "hi"
+   },
+   {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "c",
+      "type": "function",
+      "function": {
+       "name": "add",
+       "arguments": "{\"a\":1}"
+      }
+     }
+    ]
+   }
+  ],
+  "add_generation_prompt": true
+ },
+ "error": "tool call arguments must be a parsed object, not a JSON string; canonicalize upstream"
+}

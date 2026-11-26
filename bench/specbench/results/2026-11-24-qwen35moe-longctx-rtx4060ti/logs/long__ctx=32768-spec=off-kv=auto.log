@@ -1,0 +1,15 @@
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 33024 positions in 129 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (1093 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 32768, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V f16 (auto: a pool of 129 pages = 33024 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1360 MiB above the reserve and a 160 MiB slack; f16 needs 771 MiB), prefill planes 2 chunk 1024, no speculation, listening on http://127.0.0.1:8090
+serve: 404 no such endpoint: /api/ps
+serve: 404 no such endpoint: /api/v1/models
+serve: 404 no such endpoint: /api/v0/models
+serve: /v1/chat/completions stream=1 prompt=29871 cached=0 gen=512 finish=length prefill=17.48s (1708.64 tok/s) decode=6.41s (79.91 tok/s) slot=0 via=only ckpts=1 restored_at=-1 pool=119/129pg shared=0
+serve: /v1/chat/completions stream=1 prompt=29871 cached=29866 gen=512 finish=length prefill=0.06s (90.18 tok/s) decode=6.41s (79.93 tok/s) slot=0 via=only ckpts=1 restored_at=29866 pool=119/129pg shared=0
+serve: /v1/chat/completions stream=1 prompt=29871 cached=29866 gen=512 finish=length prefill=0.06s (90.52 tok/s) decode=6.39s (80.06 tok/s) slot=0 via=only ckpts=1 restored_at=29866 pool=119/129pg shared=0
+serve: /v1/chat/completions stream=1 prompt=29871 cached=29866 gen=512 finish=length prefill=0.06s (89.31 tok/s) decode=6.40s (79.98 tok/s) slot=0 via=only ckpts=1 restored_at=29866 pool=119/129pg shared=0
+serve: /v1/chat/completions stream=1 prompt=29871 cached=29866 gen=512 finish=length prefill=0.06s (89.79 tok/s) decode=6.39s (80.15 tok/s) slot=0 via=only ckpts=1 restored_at=29866 pool=119/129pg shared=0
+serve: /v1/chat/completions stream=1 prompt=29871 cached=29866 gen=512 finish=length prefill=0.06s (90.49 tok/s) decode=6.38s (80.24 tok/s) slot=0 via=only ckpts=1 restored_at=29866 pool=119/129pg shared=0
+serve: /v1/chat/completions stream=1 prompt=29871 cached=29866 gen=512 finish=length prefill=0.06s (89.26 tok/s) decode=6.39s (80.09 tok/s) slot=0 via=only ckpts=1 restored_at=29866 pool=119/129pg shared=0
+limbo_serve_gpu: stopped

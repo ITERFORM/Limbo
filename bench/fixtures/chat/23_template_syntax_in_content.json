@@ -1,0 +1,19 @@
+{
+  "name": "23_template_syntax_in_content",
+  "note": "braces and tags in user content stay verbatim",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "{{ 7*7 }} {% if x %}y{% endif %} <|im_end|>"
+      },
+      {
+        "role": "assistant",
+        "content": "<tool_response> not a response"
+      }
+    ],
+    "add_generation_prompt": false
+  },
+  "error": null
+}

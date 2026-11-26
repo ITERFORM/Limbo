@@ -1,0 +1,122 @@
+{
+  "name": "14_tool_call_roundtrip",
+  "note": "assistant tool_calls with typed arguments, then a tool result, then more",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Search for rust news and tell me the weather."
+      },
+      {
+        "role": "assistant",
+        "content": "Let me look.",
+        "reasoning_content": "Two lookups.",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "web_search",
+              "arguments": {
+                "query": "rust news",
+                "max_results": 3,
+                "fresh": true,
+                "domains": [
+                  "a.com",
+                  "b.org"
+                ]
+              }
+            }
+          },
+          {
+            "id": "call_2",
+            "type": "function",
+            "function": {
+              "name": "get_weather",
+              "arguments": {
+                "city": "München",
+                "unit": "celsius"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_1",
+        "content": "headline one\nheadline two"
+      },
+      {
+        "role": "tool",
+        "tool_call_id": "call_2",
+        "content": "{\"temp\": 11.5}"
+      },
+      {
+        "role": "assistant",
+        "content": "Rust 1.9 is out and Munich is 11.5 C."
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_weather",
+          "description": "Get the current weather for a city. Returns <b>JSON</b> & uses 'quotes'.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "City name, e.g. München or 東京"
+              },
+              "unit": {
+                "type": "string",
+                "enum": [
+                  "celsius",
+                  "fahrenheit"
+                ]
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "web_search",
+          "description": "Search the web.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string"
+              },
+              "max_results": {
+                "type": "integer",
+                "default": 5
+              },
+              "fresh": {
+                "type": "boolean"
+              },
+              "domains": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "query"
+            ]
+          }
+        }
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

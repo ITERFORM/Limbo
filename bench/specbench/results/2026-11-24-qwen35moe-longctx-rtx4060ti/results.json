@@ -1,0 +1,211 @@
+{
+ "header": {
+  "objective": "eval_tps",
+  "runs": 5,
+  "warmup": 1,
+  "max_tokens": 512,
+  "temperature": 0.0,
+  "model": "/home/alca/.cache/huggingface/hub/models--unsloth--Qwen3.6-35B-A3B-MTP-GGUF/snapshots/5bc3e238d916f48a861bac2f8a1990a0e9b7e98d/Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf",
+  "machine": {
+   "gpu": "NVIDIA GeForce RTX 4060 Ti, 16380 MiB, 615.71.09",
+   "cpu": "AMD Ryzen 7 3800X 8-Core Processor",
+   "ram": "32802056 kB",
+   "kernel": "Linux 7.2.7-zen1-1-zen",
+   "repo_head": "ccbba52",
+   "vram_used_at_start_mib": 613
+  },
+  "started": "2026-11-24 10:30:14",
+  "profiles": {
+   "long": {
+    "chars": 21209,
+    "sha256": "388865a21c0d4bbe"
+   }
+  },
+  "finished": "2026-11-24 10:31:23",
+  "n_rows": 10
+ },
+ "rows": [
+  {
+   "label": "ctx=32768-spec=off-kv=auto",
+   "profile": "long",
+   "overrides": {
+    "--ctx": "32768",
+    "--spec": "off",
+    "--kv": "auto"
+   },
+   "command": "/home/alca/projects/limbo-engine/build/bin/tools/limbo_serve_gpu -m /home/alca/.cache/huggingface/hub/models--unsloth--Qwen3.6-35B-A3B-MTP-GGUF/snapshots/5bc3e238d916f48a861bac2f8a1990a0e9b7e98d/Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf --host 127.0.0.1 --port 8090 --ctx 32768 --slots 1 --min-free-gb 0.0 --vram-reserve-mib 768 --spec off --kv auto",
+   "status": "ok",
+   "oom": false,
+   "vram_used_mib": 14269,
+   "load_s": 3.2,
+   "n_runs": 5,
+   "depth": 29871,
+   "prefill_tps": 1708.6367946839819,
+   "ttft_uncached": 17.50546097755432,
+   "ttft_med": 0.0785212516784668,
+   "eval_tps_mean": 80.10381306897925,
+   "eval_tps_med": 80.09091326052429,
+   "eval_tps_min": 79.97527580610482,
+   "eval_tps_max": 80.23590243047299,
+   "eval_tps_std": 0.087,
+   "client_tps_mean": 79.10544908254221,
+   "client_tps_med": 79.11836994064106,
+   "client_tps_min": 78.86702851636787,
+   "client_tps_max": 79.26710819612637,
+   "prompt_tps_mean": 89.87457910531151,
+   "cached_max": 29866,
+   "out_tokens_med": 512,
+   "stable": true,
+   "text_sha": "421e86758f7170dd",
+   "correct": null
+  },
+  {
+   "label": "baseline",
+   "profile": "long",
+   "overrides": {},
+   "command": "(not launched)",
+   "status": "prompt-too-long",
+   "oom": false,
+   "base_tokens": 4977,
+   "target_tokens": 2560,
+   "correct": null
+  },
+  {
+   "label": "ctx=4096-spec=off-kv=auto",
+   "profile": "long",
+   "overrides": {
+    "--ctx": "4096",
+    "--spec": "off",
+    "--kv": "auto"
+   },
+   "command": "(not launched)",
+   "status": "prompt-too-long",
+   "oom": false,
+   "base_tokens": 4977,
+   "target_tokens": 2560,
+   "correct": null
+  },
+  {
+   "label": "ctx=4096-spec=auto-kv=auto",
+   "profile": "long",
+   "overrides": {
+    "--ctx": "4096",
+    "--spec": "auto",
+    "--kv": "auto"
+   },
+   "command": "(not launched)",
+   "status": "prompt-too-long",
+   "oom": false,
+   "base_tokens": 4977,
+   "target_tokens": 2560,
+   "correct": null
+  },
+  {
+   "label": "ctx=32768-spec=auto-kv=auto",
+   "profile": "long",
+   "overrides": {
+    "--ctx": "32768",
+    "--spec": "auto",
+    "--kv": "auto"
+   },
+   "command": "/home/alca/projects/limbo-engine/build/bin/tools/limbo_serve_gpu -m /home/alca/.cache/huggingface/hub/models--unsloth--Qwen3.6-35B-A3B-MTP-GGUF/snapshots/5bc3e238d916f48a861bac2f8a1990a0e9b7e98d/Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf --host 127.0.0.1 --port 8090 --ctx 32768 --slots 1 --min-free-gb 0.0 --vram-reserve-mib 768 --spec auto --kv auto",
+   "status": "ok",
+   "oom": false,
+   "vram_used_mib": 14604,
+   "load_s": 4.01,
+   "n_runs": 5,
+   "depth": 29871,
+   "prefill_tps": 1716.2889121160442,
+   "ttft_uncached": 17.42732858657837,
+   "ttft_med": 0.07773923873901367,
+   "eval_tps_mean": 103.94267603348456,
+   "eval_tps_med": 104.01771529537551,
+   "eval_tps_min": 103.03824174350918,
+   "eval_tps_max": 105.33223563685571,
+   "eval_tps_std": 0.797,
+   "client_tps_mean": 102.31124141120411,
+   "client_tps_med": 102.33214947993667,
+   "client_tps_min": 101.44485250491095,
+   "client_tps_max": 103.67469601720062,
+   "prompt_tps_mean": 89.14741185122492,
+   "cached_max": 29866,
+   "out_tokens_med": 512,
+   "stable": true,
+   "text_sha": "421e86758f7170dd",
+   "correct": true
+  },
+  {
+   "label": "ctx=262144-spec=off-kv=auto",
+   "profile": "long",
+   "overrides": {
+    "--ctx": "262144",
+    "--spec": "off",
+    "--kv": "auto"
+   },
+   "command": "/home/alca/projects/limbo-engine/build/bin/tools/limbo_serve_gpu -m /home/alca/.cache/huggingface/hub/models--unsloth--Qwen3.6-35B-A3B-MTP-GGUF/snapshots/5bc3e238d916f48a861bac2f8a1990a0e9b7e98d/Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf --host 127.0.0.1 --port 8090 --ctx 262144 --slots 1 --min-free-gb 0.0 --vram-reserve-mib 768 --spec off --kv auto",
+   "status": "error",
+   "oom": false,
+   "vram_used_mib": 14598,
+   "load_s": 3.2,
+   "correct": null
+  },
+  {
+   "label": "ctx=262144-spec=auto-kv=auto",
+   "profile": "long",
+   "overrides": {
+    "--ctx": "262144",
+    "--spec": "auto",
+    "--kv": "auto"
+   },
+   "command": "/home/alca/projects/limbo-engine/build/bin/tools/limbo_serve_gpu -m /home/alca/.cache/huggingface/hub/models--unsloth--Qwen3.6-35B-A3B-MTP-GGUF/snapshots/5bc3e238d916f48a861bac2f8a1990a0e9b7e98d/Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf --host 127.0.0.1 --port 8090 --ctx 262144 --slots 1 --min-free-gb 0.0 --vram-reserve-mib 768 --spec auto --kv auto",
+   "status": "error",
+   "oom": false,
+   "vram_used_mib": 14624,
+   "load_s": 4.0,
+   "correct": null
+  },
+  {
+   "label": "ctx=300000-spec=off-kv=auto",
+   "profile": "long",
+   "overrides": {
+    "--ctx": "300000",
+    "--spec": "off",
+    "--kv": "auto"
+   },
+   "command": "/home/alca/projects/limbo-engine/build/bin/tools/limbo_serve_gpu -m /home/alca/.cache/huggingface/hub/models--unsloth--Qwen3.6-35B-A3B-MTP-GGUF/snapshots/5bc3e238d916f48a861bac2f8a1990a0e9b7e98d/Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf --host 127.0.0.1 --port 8090 --ctx 300000 --slots 1 --min-free-gb 0.0 --vram-reserve-mib 768 --spec off --kv auto",
+   "status": "refused",
+   "oom": false,
+   "vram_used_mib": null,
+   "load_s": null,
+   "correct": null
+  },
+  {
+   "label": "ctx=300000-spec=auto-kv=auto",
+   "profile": "long",
+   "overrides": {
+    "--ctx": "300000",
+    "--spec": "auto",
+    "--kv": "auto"
+   },
+   "command": "/home/alca/projects/limbo-engine/build/bin/tools/limbo_serve_gpu -m /home/alca/.cache/huggingface/hub/models--unsloth--Qwen3.6-35B-A3B-MTP-GGUF/snapshots/5bc3e238d916f48a861bac2f8a1990a0e9b7e98d/Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf --host 127.0.0.1 --port 8090 --ctx 300000 --slots 1 --min-free-gb 0.0 --vram-reserve-mib 768 --spec auto --kv auto",
+   "status": "refused",
+   "oom": false,
+   "vram_used_mib": null,
+   "load_s": null,
+   "correct": null
+  },
+  {
+   "label": "spec=off",
+   "profile": "long",
+   "overrides": {
+    "--spec": "off"
+   },
+   "command": "(not launched)",
+   "status": "prompt-too-long",
+   "oom": false,
+   "base_tokens": 4977,
+   "target_tokens": 2560,
+   "correct": null
+  }
+ ]
+}

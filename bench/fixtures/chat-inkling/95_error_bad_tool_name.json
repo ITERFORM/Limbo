@@ -1,0 +1,26 @@
+{
+ "name": "95_error_bad_tool_name",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "hi"
+   },
+   {
+    "role": "assistant",
+    "tool_calls": [
+     {
+      "id": "c",
+      "type": "function",
+      "function": {
+       "name": 7,
+       "arguments": {}
+      }
+     }
+    ]
+   }
+  ],
+  "add_generation_prompt": true
+ },
+ "error": "tool call function name must be a string"
+}

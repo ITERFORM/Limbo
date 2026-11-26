@@ -1,0 +1,12 @@
+{
+ "name": "02_user_only",
+ "context": {
+  "messages": [
+   {
+    "role": "user",
+    "content": "Hello."
+   }
+  ],
+  "add_generation_prompt": true
+ }
+}

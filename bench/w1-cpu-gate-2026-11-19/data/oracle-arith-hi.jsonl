@@ -1,0 +1,3 @@
+{"name":"hi","gen":0,"pos":1,"agree":true,"oracle_greedy":40,"limbo":[40,15.449148,72,15.436867,0.012281],"oracle":[40,15.480742,72,15.475470,0.005272],"limbo_at_o1":15.449148,"limbo_at_o2":15.436867,"d1":-0.031594,"d2":-0.038603,"dgap":0.007009}
+{"name":"hi","gen":1,"pos":2,"agree":false,"oracle_greedy":1044,"limbo":[599,19.370010,1044,19.252035,0.117975],"oracle":[1044,19.297234,599,19.233574,0.063660],"limbo_at_o1":19.252035,"limbo_at_o2":19.370010,"d1":-0.045199,"d2":0.136436,"dgap":-0.181635}
+{"summary":true,"name":"hi","n_prompt":2,"n_gen":2,"agree":1,"disagree_gap_lt_0.1":1,"disagree_gap_ge_0.1":0,"max_abs_d1":0.045199,"max_abs_dgap":0.181635,"threads":8,"arith":"oracle","prefill_s":2.89,"gen_s":1.54,"tok_per_s_prefill":0.692,"tok_per_s_gen":0.650}

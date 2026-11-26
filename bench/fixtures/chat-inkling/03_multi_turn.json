@@ -1,0 +1,24 @@
+{
+ "name": "03_multi_turn",
+ "context": {
+  "messages": [
+   {
+    "role": "system",
+    "content": "Be brief."
+   },
+   {
+    "role": "user",
+    "content": "Name a colour."
+   },
+   {
+    "role": "assistant",
+    "content": "Vermilion."
+   },
+   {
+    "role": "user",
+    "content": "Another."
+   }
+  ],
+  "add_generation_prompt": true
+ }
+}

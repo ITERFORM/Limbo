@@ -1,0 +1,46 @@
+# limbo-probe — PLAN.md §7 measurements
+# device: NVIDIA GeForce RTX 4060 Ti, sm_8.9, 34 SMs, 15.7 GiB VRAM
+# host: 16 cpus, DDR buffers 256 MiB, transparent_hugepage=always [madvise] never
+
+1    ddr read, 1 threads, pinned                        28.444 GB/s
+1    ddr read, 2 threads, pinned                        40.938 GB/s
+1    ddr read, 4 threads, pinned                        46.972 GB/s
+1    ddr read, 8 threads, pinned                        42.539 GB/s
+1    ddr read, 4 threads on cpus 0-3 (one CCX)          47.223 GB/s
+1    ddr read, 4 threads on cpus 4-7 (other CCX)        46.693 GB/s
+1    ddr read, 8 threads, unpinned                      41.956 GB/s
+8    dependent-load chase, 4 KiB pages (1048576 pages)     26.507 ns/hop
+8    dependent-load chase, 2 MiB pages (2048 pages)     26.691 ns/hop
+8    4 KiB / 2 MiB cost ratio                            0.993 x
+8    AnonHugePages actually backing the 2 MiB run        0.000 MiB
+2    H2D cacheable pinned, 416 KiB                       6.537 GB/s
+2    H2D cacheable pinned, 2 MiB                         6.631 GB/s
+2    H2D cacheable pinned, 2 MiB, beside a busy GPU      6.625 GB/s
+2    H2D write-combined pinned, 416 KiB                  6.514 GB/s
+2    H2D write-combined pinned, 2 MiB                    6.638 GB/s
+2    H2D write-combined pinned, 2 MiB, beside a busy GPU      6.618 GB/s
+2    H2D mapped, in-kernel pull, 416 KiB                 6.383 GB/s
+2    H2D mapped, in-kernel pull, 2 MiB                   6.507 GB/s
+2    H2D mapped, in-kernel pull, 2 MiB, beside a busy GPU      1.847 GB/s
+5    doorbell round trip, median                         1.340 us
+5    doorbell round trip, p99                            1.610 us
+6    ddr read, 8 threads, beside an 8 MiB DMA loop      38.708 GB/s
+6    empty-kernel launch+sync, DDR saturated, median      8.640 us
+6    empty-kernel launch+sync, DDR saturated, p99      133.652 us
+6    empty-kernel launch+sync, idle box, median          6.800 us
+4    q8_0 page decode, 256 tokens, 1 row(s)             13.370 us
+4    q8_0 page decode, 256 tokens, 2 row(s)             19.500 us
+4    q8_0 page decode, 256 tokens, 3 row(s)             24.550 us
+4    q8_0 page decode, 256 tokens, 4 row(s)             30.190 us
+4    q8_0 page decode, 256 tokens, 8 row(s)             52.821 us
+9    filesystem under build/tmp (f_type)            2435016766.000 hex
+9    mount: /dev/sdc2 / btrfs rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvolid=906,subvol=/@ 0 0
+9    mount: /dev/sdc2 /home btrfs rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvolid=257,subvol=/@home 0 0
+9    sequential read, 4 MiB blocks                     499.428 MB/s
+9    random read 4 KiB, median                          92.361 us
+9    random read 4 KiB, IOPS                         10827.081 iops
+9    random read 64 KiB, median                        254.213 us
+9    random read 64 KiB, IOPS                         3933.709 iops
+
+# deferred: item 3 (per-format expert rows) lands in W4 with the verified kernels;
+#           item 7 (routing statistics) lands in W1 with the reference forward pass.

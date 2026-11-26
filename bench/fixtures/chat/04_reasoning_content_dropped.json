@@ -1,0 +1,24 @@
+{
+  "name": "04_reasoning_content_dropped",
+  "note": "reasoning_content on an assistant turn before the last user query is dropped",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Think about 17*3."
+      },
+      {
+        "role": "assistant",
+        "content": "51",
+        "reasoning_content": "17*3 = 51."
+      },
+      {
+        "role": "user",
+        "content": "Again for 19*3."
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

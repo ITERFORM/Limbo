@@ -1,0 +1,8 @@
+<|im_start|>user
+Think about 17*3.<|im_end|>
+<|im_start|>assistant
+<think>
+17*3 = 51.
+</think>
+
+51<|im_end|>

@@ -1,0 +1,1 @@
+<|message_system|><|content_text|>You are a careful assistant.<|end_message|><|message_system|><|content_text|>Thinking effort level: 0.9<|end_message|><|message_user|><|content_text|>What is 84 * 3 / 2?<|end_message|>

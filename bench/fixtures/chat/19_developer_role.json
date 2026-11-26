@@ -1,0 +1,19 @@
+{
+  "name": "19_developer_role",
+  "note": "developer message treated as system",
+  "normalize": false,
+  "context": {
+    "messages": [
+      {
+        "role": "developer",
+        "content": "Dev rules."
+      },
+      {
+        "role": "user",
+        "content": "Hi"
+      }
+    ],
+    "add_generation_prompt": true
+  },
+  "error": null
+}

@@ -1,0 +1,9 @@
+build/
+build-*/
+bench/raw/
+# Generated corpora: scripts/make_corpus.py reproduces them byte for byte (fixed seeds).
+bench/corpus/random*.txt
+bench/corpus/long.txt
+*.o
+*.so
+__pycache__/

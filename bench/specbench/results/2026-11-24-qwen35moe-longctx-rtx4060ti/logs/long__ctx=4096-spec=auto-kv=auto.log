@@ -1,0 +1,6 @@
+serve: slots: 1 (--slots 1; a second would take 62.8 MiB)
+serve: pool: 4352 positions in 17 pages of 256 shared by 1 slot
+serve: checkpoints: 8 of 8 asked, 62.8 MiB each (1215 MiB free after)
+limbo_serve_gpu: Qwen3.6-35B-A3B ctx 4096, NVIDIA GeForce RTX 4060 Ti, 13.57 GB of VRAM, K/V f16 (auto: a pool of 17 pages = 4352 positions for all slots, 1 slot planned with 2 checkpoint slots each, in 1358 MiB above the reserve and a 160 MiB slack; f16 needs 211 MiB), prefill planes 2 chunk 1024, speculation MTP + ngram (n 8, up to 7) (row 10.4 ms, windows of 2/3/4 rows 12.0/14.2/15.3, block step 0.7, drafter 0.0), listening on http://127.0.0.1:8090
+serve: 400 the prompt has 4986 tokens, the context holds 4096
+limbo_serve_gpu: stopped

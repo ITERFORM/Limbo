@@ -1,0 +1,8 @@
+<|im_start|>user
+Think about 17*3.<|im_end|>
+<|im_start|>assistant
+51<|im_end|>
+<|im_start|>user
+Again for 19*3.<|im_end|>
+<|im_start|>assistant
+<think>
